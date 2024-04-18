@@ -11,12 +11,13 @@ import { ToDoService } from '../../../service/to-do.service';
 })
 export class ContainerTarefaStatusComponent {
 
-  constructor(private toDoService: ToDoService) {}
   
-  numeroDeTarefas = 0;
-  tarefasConcluidas = 0;
-  
-  atualizarNumeroDeTarefas() {
+  constructor(private toDoService: ToDoService) { }
+
+  numeroDeTarefas: number = 0;
+  tarefasConcluidas: number = 0;
+
+  atualizarStatusTarefas() {
     this.numeroDeTarefas = this.toDoService.listaDeTarefas.length;
     this.tarefasConcluidas = this.toDoService.listaDeTarefas.filter(tarefa => tarefa.concluido == true).length;
   }
