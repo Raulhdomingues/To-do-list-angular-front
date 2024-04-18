@@ -1,0 +1,85 @@
+section {
+    display: flex;
+    justify-content: center;
+
+    .checkbox {
+
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        gap: 20px;
+
+        .styleConcluido {
+            color: green;
+            text-decoration: line-through;
+        }
+
+
+        label {
+            background-color: #fff;
+            border: 2px solid #4EA8DE;
+            border-radius: 50%;
+            cursor: pointer;
+            height: 18px;
+            width: 18px;
+            margin: 0;
+            position: relative;
+        }
+
+        label:after {
+            border: 2px solid #fff;
+            border-top: none;
+            border-right: none;
+            content: "";
+            height: 6px;
+            left: 2px;
+            opacity: 1;
+            position: absolute;
+            top: 4px;
+            transform: rotate(-45deg);
+            width: 12px;
+            z-index: 2;
+        }
+
+        input {
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        label.ticado {
+            background-color: #5E60CE;
+            border-color: #5E60CE;
+        }
+    }
+
+    .iconeLixeira:hover {
+        color: red;
+        cursor: pointer;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+
+        li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10px;
+            background-color: #333;
+            color: #F2F2F2;
+            height: 72px;
+            border-radius: 8px;
+            list-style: none;
+            margin-bottom: 10px;
+    
+            img {
+                width: 30px;
+                height: 30px;
+                cursor: pointer;
+            }
+        }
+    }
+}

@@ -1,0 +1,9 @@
+<section>
+    <p (click)="teste()">Tarefas criadas<span>{{ numeroDeTarefas }}</span></p>
+    <p (click)="atualizarNumeroDeTarefas()">Concluídas<span>{{ tarefasConcluidas }}/{{ numeroDeTarefas }}</span></p>
+</section>
+
+<main>
+    <app-lista-vazia *ngIf=""></app-lista-vazia>
+    <app-lista></app-lista>
+</main>
