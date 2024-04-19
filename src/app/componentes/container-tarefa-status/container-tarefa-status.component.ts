@@ -1,16 +1,12 @@
-import { Component, DoCheck, Injectable, OnInit } from '@angular/core';
+import { Component, DoCheck } from '@angular/core';
 import { ToDoService } from '../../../service/to-do.service';
 
-@Injectable({
-  providedIn: 'root'
-})
 @Component({
   selector: 'app-container-tarefa-status',
   templateUrl: './container-tarefa-status.component.html',
   styleUrl: './container-tarefa-status.component.scss'
 })
-export class ContainerTarefaStatusComponent {
-
+export class ContainerTarefaStatusComponent implements DoCheck{
   
   constructor(private toDoService: ToDoService) { }
 
@@ -22,7 +18,7 @@ export class ContainerTarefaStatusComponent {
     this.tarefasConcluidas = this.toDoService.listaDeTarefas.filter(tarefa => tarefa.concluido == true).length;
   }
 
-  teste() {
-    console.log(this.toDoService.listaDeTarefas);
+  ngDoCheck(): void {
+    this.atualizarStatusTarefas();
   }
 }

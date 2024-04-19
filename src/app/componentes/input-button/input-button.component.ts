@@ -1,7 +1,6 @@
 import { ToDoService } from './../../../service/to-do.service';
-import { Component, Inject, Injectable } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
 import { Tarefa } from '../../models/tarefa-model';
-import { ContainerTarefaStatusComponent } from '../container-tarefa-status/container-tarefa-status.component';
 
 @Injectable({
   providedIn: 'root'
@@ -13,16 +12,13 @@ import { ContainerTarefaStatusComponent } from '../container-tarefa-status/conta
 })
 export class InputButtonComponent {
 
-  constructor (
-    private toDoService: ToDoService,
-    private containerTarefaStatus: ContainerTarefaStatusComponent
-    ) { }
+  constructor (private toDoService: ToDoService) { }
 
   tarefaDigitada: string = '';
 
   adicionarTarefa() {
-    this.containerTarefaStatus.atualizarNumeroDeTarefas();
     const novaTarefa: Tarefa = {
+      id: '',
       tarefa: this.tarefaDigitada,
       concluido: false
     };

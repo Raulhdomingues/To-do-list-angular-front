@@ -6,9 +6,9 @@
                  (click)="concluirTarefa(i)">
                  <input type="checkbox">
                 </label>
-                <p class="mb-0" [class.styleConcluido]="tarefa.concluido">{{ tarefa.tarefa }}</p>
+                <p class="mb-0" [class.styleConcluido]="tarefa.concluido">{{ tarefa.id }}</p>
             </div>
-            <fa-icon [icon]="iconeLixeira" class="iconeLixeira" (click)="removerTarefa(i)"></fa-icon>            
+            <fa-icon [icon]="iconeLixeira" class="iconeLixeira" (click)="removerTarefa(tarefa.id)"></fa-icon>            
         </li>
     </ul>
 </section>

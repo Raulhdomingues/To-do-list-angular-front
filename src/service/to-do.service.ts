@@ -38,8 +38,15 @@ export class ToDoService {
     this.listaDeTarefas[index].concluido = !this.listaDeTarefas[index].concluido;
   }
 
-  removerTarefa(index: number) {
-    this.listaDeTarefas.splice(index, 1);
+  async removerTarefa(id: string) {
+    console.log(id);
+    await fetch(`http://localhost:3030/deletar-tarefa/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({id})
+    }) 
   }
 
   obterTarefas(): Tarefa[] {
