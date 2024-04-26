@@ -36,7 +36,6 @@ export class ListaComponent implements OnInit{
   iconeLixeira = faTrash
 
   async removerTarefa(_id: any) {
-    console.log(_id);
     await this.toDoService.removerTarefa(_id)
   }
 

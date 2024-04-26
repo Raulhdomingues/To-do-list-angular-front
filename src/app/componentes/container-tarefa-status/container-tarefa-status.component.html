@@ -1,9 +1,10 @@
-<section>
-    <p>Tarefas criadas<span>{{ numeroDeTarefas }}</span></p>
-    <p>Concluídas<span>{{ tarefasConcluidas }}/{{ numeroDeTarefas }}</span></p>
-</section>
-
 <main>
-    <app-lista-vazia *ngIf="!numeroDeTarefas"></app-lista-vazia>
+    <app-input-button></app-input-button>
+    <section>
+        <p>Tarefas criadas<span>{{ numeroDeTarefas }}</span></p>
+        <p>Concluídas<span>{{ tarefasConcluidas }}/{{ numeroDeTarefas }}</span></p>
+    </section>
+
+    <app-lista-vazia class="listaVazia" *ngIf="!numeroDeTarefas"></app-lista-vazia>
     <app-lista></app-lista>
 </main>

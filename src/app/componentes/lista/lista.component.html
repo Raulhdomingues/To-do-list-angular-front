@@ -1,14 +1,12 @@
-<section>
-    <ul>
-        <li *ngFor="let tarefa of listaDeTarefas let i = index">
-            <div class="checkbox">
-                <label for="" [class.ticado]="tarefa.concluido"
-                 (click)="concluirTarefa(i)">
-                 <input type="checkbox">
-                </label>
-                <p class="mb-0" [class.styleConcluido]="tarefa.concluido">{{ tarefa.tarefa }}</p>
-            </div>
-            <fa-icon [icon]="iconeLixeira" class="iconeLixeira" (click)="removerTarefa(tarefa._id)"></fa-icon>            
-        </li>
-    </ul>
-</section>
+<ul>
+    <li *ngFor="let tarefa of listaDeTarefas let i = index">
+        <div class="checkbox">
+            <label for="" [class.ticado]="tarefa.concluido"
+                (click)="concluirTarefa(i)">
+                <input type="checkbox">
+            </label>
+            <p class="mb-0" [class.styleConcluido]="tarefa.concluido">{{ tarefa.tarefa }}</p>
+        </div>
+        <fa-icon [icon]="iconeLixeira" class="iconeLixeira" (click)="removerTarefa(tarefa._id)"></fa-icon>            
+    </li>
+</ul>
