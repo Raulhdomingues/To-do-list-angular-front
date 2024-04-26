@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Tarefa } from '../app/models/tarefa-model';
+import { Tarefa } from '../models/tarefa-model';
 import { Subject } from 'rxjs';
 
 @Injectable({
@@ -22,6 +22,7 @@ export class ToDoService {
       })
       this.listaDeTarefas.push(tarefa);
       this.notificaAtualizacao();
+      this.listarTarefas();
     } else {
       alert('Digite uma tarefa!');
     }
@@ -38,16 +39,29 @@ export class ToDoService {
     this.listaDeTarefas[index].concluido = !this.listaDeTarefas[index].concluido;
   }
 
-  async removerTarefa(id: string) {
-    console.log(id);
-    await fetch(`http://localhost:3030/deletar-tarefa/${id}`, {
+  async removerTarefa(_id: any) {
+    await fetch(`http://localhost:3030/deletar-tarefa/${_id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({id})
+      }
     }) 
+    this.listarTarefas();
   }
+
+  async editarTarefa(_id: any) {
+    await fetch(`http://localhost:3030/editar-tarefa/${_id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        concluido: true
+      })
+    })
+    this.listarTarefas();
+  }
+
 
   obterTarefas(): Tarefa[] {
     return this.listaDeTarefas;
@@ -61,4 +75,3 @@ export class ToDoService {
     return this.subjectToDo.asObservable();
   }
 }
-

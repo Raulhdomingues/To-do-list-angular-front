@@ -1,5 +1,5 @@
 import { Component, DoCheck } from '@angular/core';
-import { ToDoService } from '../../../service/to-do.service';
+import { ToDoService } from '../../service/to-do.service';
 
 @Component({
   selector: 'app-container-tarefa-status',

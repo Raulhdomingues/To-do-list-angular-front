@@ -1,4 +1,4 @@
-import { ToDoService } from './../../../service/to-do.service';
+import { ToDoService } from '../../service/to-do.service';
 import { Component, Injectable } from '@angular/core';
 import { Tarefa } from '../../models/tarefa-model';
 
@@ -18,7 +18,6 @@ export class InputButtonComponent {
 
   adicionarTarefa() {
     const novaTarefa: Tarefa = {
-      id: '',
       tarefa: this.tarefaDigitada,
       concluido: false
     };

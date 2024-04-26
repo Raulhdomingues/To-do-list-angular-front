@@ -1,5 +1,5 @@
 export interface Tarefa {
-    id: string;
+    _id?: any;
     tarefa: string;
     concluido?: boolean;
 }

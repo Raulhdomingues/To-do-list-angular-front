@@ -10,8 +10,9 @@ import { InputButtonComponent } from './componentes/input-button/input-button.co
 import { ContainerTarefaStatusComponent } from './componentes/container-tarefa-status/container-tarefa-status.component';
 import { ListaVaziaComponent } from './componentes/lista-vazia/lista-vazia.component';
 import { ListaComponent } from './componentes/lista/lista.component';
+import { LoginComponent } from './componentes/login/login.component';
 
-import { ToDoService } from '../service/to-do.service';
+import { ToDoService } from './service/to-do.service';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { ToDoService } from '../service/to-do.service';
     ContainerTarefaStatusComponent,
     ListaVaziaComponent,
     ListaComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
