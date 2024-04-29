@@ -1,0 +1,53 @@
+#registro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 20px;
+    position: relative;
+    bottom: 200px;
+    overflow-y: hidden;
+    
+    input, button {
+        min-width: 30%;
+        padding: 10px;
+        border-radius: 5px;
+        height: 75px;
+        border: none;
+        outline: none;
+    }
+
+    input {
+        background-color: #333;
+        border-radius: 8px;
+        color: #808080;
+        font-size: 20px;
+        padding: 0 10px;
+    }
+
+    button {
+        color: #fff;
+        background-color: #1E6F9F;
+        font-size: 20px;
+
+        &:hover {
+            background-color: #4Ea8DE;
+        }
+    }
+    
+    a {
+        font-size: 18px;
+        letter-spacing: 1.5px;
+        color: #1E6F9F;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    p {
+        color: #d1c9c9;
+        font-size: 18px;
+        letter-spacing: 1.5px;
+        font-weight: 600;
+    }
+}
